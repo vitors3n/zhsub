@@ -1,0 +1,87 @@
+/* A Netflix recria a legenda durante a reprodução; a camada zhsub a acompanha. */
+.player-timedtext-text-container > .zhsub-original {
+  visibility: hidden !important;
+}
+
+.zhsub-caption {
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: #008cff;
+  font: inherit;
+  line-height: inherit;
+  text-align: center;
+  text-shadow: 0 0 7px #000;
+  white-space: pre-wrap;
+  pointer-events: none !important;
+}
+
+.zhsub-word {
+  color: #008cff;
+  cursor: help;
+}
+
+.zhsub-word--active {
+  color: #75c5ff;
+  text-decoration: underline;
+}
+
+.zhsub-tooltip {
+  position: fixed;
+  z-index: 2147483647;
+  max-width: min(360px, calc(100vw - 24px));
+  padding: 10px 12px;
+  border: 1px solid #4ea3ff;
+  border-radius: 10px;
+  background: rgba(13, 18, 28, 0.96);
+  color: #fff;
+  font: 14px/1.4 system-ui, sans-serif;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.zhsub-tooltip__pinyin {
+  color: #8fc5ff;
+}
+
+/* Botão inspirado nos controles discretos do player. */
+.zhsub-copy-button {
+  position: fixed;
+  right: 28px;
+  bottom: 82px;
+  z-index: 2147483647;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(25, 25, 25, 0.82);
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+.zhsub-copy-button::before,
+.zhsub-copy-button::after {
+  position: absolute;
+  width: 13px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  content: "";
+}
+
+.zhsub-copy-button::before {
+  top: 10px;
+  left: 11px;
+}
+
+.zhsub-copy-button::after {
+  top: 14px;
+  left: 15px;
+  background: rgba(25, 25, 25, 0.82);
+}
+
+.zhsub-copy-button:hover,
+.zhsub-copy-button--copied {
+  opacity: 1;
+  background: rgba(0, 140, 255, 0.92);
+}

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "zhsub",
+  "version": "1.0.0",
+  "description": "Exibe as legendas da Netflix em azul.",
+  "permissions": ["clipboardWrite"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.netflix.com/*"],
+      "css": ["netflix-subtitles.css"],
+      "js": ["subtitle-lookup.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
